@@ -19,10 +19,8 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
-      - name: R commands
-        run: |
-          print(rnorm(10))
-        shell: R
+
+
 
 
 
