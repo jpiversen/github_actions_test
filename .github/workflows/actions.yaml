@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS Actions
-        id: greet
+        id: greet # Need ID to refrence output later
 
         # The refrence over is a reference to the 
         # github-repo github.com/actions/hello-world-javascript-action
@@ -23,5 +23,21 @@ jobs:
       - name: Log greeting time
 
         # One can refrence output from a step with ${{ steps.<id>.outputs.<output name> }}
+        # The output names can be found on the specific github-repo
         run: echo "${{ steps.greet.outputs.time }}"
+
+      - name: List files before checkout (will not work)
+        run: |
+          pwd
+          ls -lah
+
+      - name: Checkout
+        uses: actions/checkout@v2 # Checkouts and clones the last commit
+
+      - name: List files after checkout (will work)
+        run: |
+          pwd
+          ls -lah
+
+
 
