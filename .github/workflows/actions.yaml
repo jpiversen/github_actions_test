@@ -1,0 +1,27 @@
+name: Actions workflow
+
+on: [push]
+
+jobs: 
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Actions
+        id: greet
+
+        # The refrence over is a reference to the 
+        # github-repo github.com/actions/hello-world-javascript-action
+        # at tag v1.x, where x is the latest minor release at the major version 1.
+        # One can also specify a branch (like master) or a specific commit instead of release. 
+        uses: actions/hello-world-javascript-action@v1 
+
+
+        # To provide input to the action, we use "with"
+        with: 
+          who-to-greet: JP
+
+      - name: Log greeting time
+
+        # One can refrence output from a step with ${{ steps.<id>.outputs.<output name> }}
+        run: echo "${{ steps.greet.outputs.time }}"
+
