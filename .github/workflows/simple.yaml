@@ -22,6 +22,7 @@ jobs:
 
   run-windows-commands:
     runs-on: windows-latest
+    needs: ["run-shell-command"] # We can specify that this job runds after another with needs: ["<another job>"]
     steps:
       - name: Directory PowerShell
         run: Get-Location
