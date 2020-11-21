@@ -13,6 +13,6 @@ jobs:
         run: |
           git --version
           R --version
-          python --version
+          python3 --version
 
 
