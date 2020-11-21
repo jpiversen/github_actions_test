@@ -14,12 +14,20 @@ jobs:
           git --version
           R --version
           python3 --version
-      - name: Python commands
+      - name: Python commands # One can run python commands directly if one specify shell: python
         run: |
           import platform
           print(platform.processor())
         shell: python
 
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: Directory PowerShell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash
 
 
 
