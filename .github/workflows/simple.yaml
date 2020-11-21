@@ -14,5 +14,12 @@ jobs:
           git --version
           R --version
           python3 --version
+      - name: Python commands
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+
+
 
 
