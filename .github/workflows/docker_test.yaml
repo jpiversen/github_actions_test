@@ -7,8 +7,7 @@ on: push
 jobs:
   rocker:
     runs-on: ubuntu-latest
-      container:
-        image: rocker:rocker/tidyverse
+      container: rocker:rocker/tidyverse
       steps:
         - name: Run Rscript
           run: |
