@@ -8,7 +8,7 @@ jobs:
   rocker:
     runs-on: ubuntu-latest
       container:
-        image: rocker:tidyverse
+        image: rocker:rocker/tidyverse
       steps:
         - name: Run Rscript
           run: |
@@ -16,6 +16,6 @@ jobs:
             filter(mtcars, cyl == 4)
           shell: Rscript {0}
 
-          
+
 
 
