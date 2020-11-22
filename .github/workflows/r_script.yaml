@@ -7,12 +7,15 @@ jobs:
   trigger_r: 
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2 # Checkouts and clones the last commit
+      
       - name: Check versions
         run: |
           ls -lah
 
           Rscript r_script.R
 
-          
+
       
 
