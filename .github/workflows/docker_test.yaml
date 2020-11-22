@@ -1,0 +1,21 @@
+
+
+name: Docker-test
+
+on: push
+
+jobs:
+  rocker:
+    runs-on: ubuntu-latest
+      container:
+        image: rocker:tidyverse
+      steps:
+        - name: Run Rscript
+          run: |
+            library(tidyverse)
+            filter(mtcars, cyl == 4)
+          shell: Rscript {0}
+
+          
+
+
