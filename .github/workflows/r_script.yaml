@@ -12,7 +12,7 @@ jobs:
     name: R ${{ matrix.R }} sample
     steps:
       - name: Checkout
-        uses: actions/checkout@v2 # Checkouts and clones the last commit
+        uses: actions/checkout@master # Checkouts and clones the last commit
 
       - name: Setup R
         uses: r-lib/actions/setup-R@v1
@@ -20,5 +20,9 @@ jobs:
           r-version: ${{ matrix.R }}
 
       - name: Run R
-        run: Rscript r_script.R
+        run: |
+
+          ls -lah
+
+          Rscript r_script.R
 
